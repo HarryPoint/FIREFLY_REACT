@@ -1,0 +1,41 @@
+{
+  "name": "react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.3.0",
+    "axios": "^0.18.0",
+    "history": "^4.7.2",
+    "immutability-helper": "^2.6.6",
+    "normalize.css": "^8.0.0",
+    "qs": "^6.5.1",
+    "rc-banner-anim": "^1.0.1",
+    "rc-queue-anim": "^1.4.1",
+    "rc-tween-one": "^1.7.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-loadable": "^5.3.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "redux-promise-middleware": "^5.0.0",
+    "styled-components": "^3.2.1",
+    "styled-theming": "^2.2.0",
+    "type-to-reducer": "^1.1.0"
+  },
+  "proxy": "http://pctest.yay233.com/",
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.6.7",
+    "react-app-rewire-less": "^2.1.1",
+    "react-app-rewired": "^1.5.0",
+    "redux-immutable-state-invariant": "^2.1.0"
+  }
+}
