@@ -1,3 +1,1 @@
 export const HOME_GET_BANNER = 'HOME/GET_BANNER';
-export const HOME_GET_NAV = 'HOME/GET_NAV';
-export const HOME_GET_RECOMMEND = 'HOME/GET_RECOMMEND';

@@ -4,7 +4,7 @@ class Content extends Component {
     render() {
         return (
             <div>
-                content
+                精彩活动
             </div>
         )
     }

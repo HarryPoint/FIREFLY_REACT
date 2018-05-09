@@ -6,7 +6,7 @@ const apiReducer = (actionType, initData = []) => typeToReducer({
   [actionType]: {
     [PENDING]: (state, action) => update(state, {loading: { $set: true }}),
     [REJECTED]: (state, action) => update(state, {loading: { $set: false }, error: { $set: action.payload}}),
-    [FULFILLED]: (state, action) => update(state, {loading: { $set: false }, data: { $push: action.payload.data.data}}),
+    [FULFILLED]: (state, action) => update(state, {loading: { $set: false }, data: { $set: action.payload.data.data}}),
   }
 }, {
   data: initData,

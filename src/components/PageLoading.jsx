@@ -11,8 +11,8 @@ const LoadingBox = styled.div`
   right: 0;
   bottom: 0;
 `;
-const Loading = () => {
+const PageLoading = () => {
   return (<LoadingBox><Spin></Spin></LoadingBox>)
 };
 
-export default Loading;
+export default PageLoading;

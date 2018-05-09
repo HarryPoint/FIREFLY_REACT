@@ -1,114 +1,93 @@
-import React, { Component } from 'react';
-import { Row, Col, Input } from 'antd';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import myCss from '@/styleSnippets';
 import logoImg from '@/assets/logo.png';
-const Search = Input.Search;
 
-const StyledRow = styled(Row)`
-  ${myCss.wrapper}
-`;
-const LogoLink = styled(Link)`
-  img {
-    height: 60px;
-  }
-`;
-
-const Ul = styled.ul`
-  font-size: 16px;
-  display: flex;
-  list-style: none;
-  li {
-    position: relative;
-
-    a {
-      position: relative;
-      z-index: 2;
-      display: block;
-      color: #000;
-      padding: 30px 20px 0 20px;
-      line-height: 60px;
-      transition: all .3s;
+class PageNavBar extends Component {
+    render() {
+        return (
+            <div className={this.props.className}>
+                <Link className={'logo'} to="/"><img src={logoImg} alt=""/></Link>
+                <ul>
+                    <li className="active">
+                        <Link to="/Home">
+                            <mark>萤火虫</mark>
+                            <span>FIREFLY</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/Activity">
+                            <mark>精彩活动</mark>
+                            <span>Activities</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/Photo">
+                            <mark>照片下载</mark>
+                            <span>Photo download</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/Prop">
+                            <mark>道具选择</mark>
+                            <span>Photo download</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/About">
+                            <mark>关于我们</mark>
+                            <span>Photo download</span>
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+        );
     }
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 0;
-      z-index: 1;
-      background-color: #ffba0a;
-      transition: height .3s, opacity .3s;
-    }
-
-    &.on, &:hover {
-
-      a {
-        color: #fff;
-      }
-
-      &::after {
-        height: 100%;
-      }
-    }
-    &:hover {
-      &::after {
-        opacity: .8;
-      }
-    }
-  }
-`;
-
-const StyledSearch = styled(Search)`
-  .ant-input {
-    border-radius: 16px;
-  }
-`;
-
-const StyledCol = styled(Col)`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const StyledSpan = styled.span`
-  color: #000;
-  cursor: pointer;
-  transition: all .3s;
-  &:hover {
-    color: #ffb835;
-  }
-`;
-
-class TopNavBar extends Component {
-  render() {
-    return (
-      <div>
-        <StyledRow type="flex" justify="space-between" align="middle">
-          <Col span={4}>
-            <LogoLink to="/"><img src={logoImg} alt=""/></LogoLink>
-          </Col>
-          <Col span={8}>
-            <Ul>
-              <li className="on"><Link to="/">首页</Link></li>
-              <li><Link to="/userCenter">全部大神</Link></li>
-              <li><Link to="/topics">APP下载</Link></li>
-            </Ul>
-          </Col>
-          <Col span={4}>
-            <StyledSearch></StyledSearch>
-          </Col>
-          <StyledCol span={5}>
-            <StyledSpan>我的订单</StyledSpan>
-            <StyledSpan>消息中心</StyledSpan>
-            <StyledSpan>注册/登录</StyledSpan>
-          </StyledCol>
-        </StyledRow>
-      </div>
-    );
-  }
 }
-export default TopNavBar
+
+const StyledPageNavBar = styled(PageNavBar)`
+    padding: 16px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        width: 163px;
+        height: 62px;
+        display: block;
+    }
+    ul {
+        display: flex;
+        li {
+            margin-left: 50px;
+            a {
+                color: #333;
+                display: block;
+                position: relative;
+                padding-bottom: 8px;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 5px;   
+                    background:#e7af00;       
+                    transition: width .3s;           
+                }                       
+                mark {
+                    font-size: 26px;
+                    line-height: 54px;                    
+                }
+                span {
+                    font-size: 12px;
+                    vertical-align: sub;
+                }
+                &:hover::after {
+                    width: 100%;
+                }         
+            }
+        }
+    }
+`;
+
+export default StyledPageNavBar;

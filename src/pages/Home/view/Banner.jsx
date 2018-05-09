@@ -5,11 +5,9 @@ import BannerAnim, { Element } from 'rc-banner-anim';
 import styled from 'styled-components';
 import 'rc-banner-anim/assets/index.css';
 import {actionHomeGetBanner} from '../actions';
-import myCss from '@/styleSnippets';
 const BgElement = Element.BgElement;
 
 const StyledBannerBox = styled.div`
-  ${myCss.wrapper}
   height: 473px;
   position: relative;
   overflow: hidden;
@@ -23,15 +21,15 @@ const StyledBannerBox = styled.div`
 
 class Banner extends Component {
   componentDidMount () {
-    this.props.getBanner()
+    // this.props.getBanner()
   }
   render () {
     if(this.props.banner.length) {
       return (<StyledBannerBox>
         <BannerAnim prefixCls="banner">
           {
-            this.props.banner.map((itm, idx) => <Element key={`${idx}`}>
-              <BgElement key="bg" className="bg" style={{background: `url(${itm.img}) center/cover no-repeat`}}/>
+            this.props.banner.map((itm, idx) => <Element key={idx}>
+              <BgElement key="bg" className="bg" style={{background: `url(${itm}) center/cover no-repeat`}}/>
             </Element>)
           }
         </BannerAnim>

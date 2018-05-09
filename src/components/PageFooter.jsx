@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 // import {Link} from 'react-router-dom';
-import line from '@/assets/page_footer_line.png';
 import myCss from '@/styleSnippets';
 
 const StyledBg = styled.div`
@@ -36,7 +35,6 @@ const StyledStepItem = styled.li`
   }
 `;
 const StyledStepLine = styled.li`
-  background: url(${line}) center center/contain no-repeat;
   width: 122px;
 `;
 const StyledCopy = styled.div`
